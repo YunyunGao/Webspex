@@ -2,8 +2,10 @@
 {% block title %}About{% endblock %}
 {% block content %}
     <p class="flow xb-margin">
-        <em>AUSPEX</em> is a diagnostic tool for graphical X-Ray data analysis, which enable users to visually and automatically
-        detect ice-ring artefacts and other problems in integrated X-ray diffraction data.
+        <em>AUSPEX</em> is a diagnostic tool for graphical X-Ray data analysis, it enable users to automatically detect
+        <strong>ice-ring artefacts with HELCARAXE CNN network</strong>, 
+        <strong>beamstop outliers with semi-supervised culstering strategy</strong>,
+        or visualize other problems in integrated X-ray diffraction data.
     </p>
 
     <img src="{{ url_for('static', filename='example.png') }}" alt="Example Auspex Plot" class="pimg" />
