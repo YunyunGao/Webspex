@@ -1,0 +1,58 @@
+/** W3schools is wonderful!
+ *
+**/
+
+/***** Tooltip - Top *****/
+
+.tooltip
+{
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext
+{
+    visibility: hidden;
+    width: 100%;
+    min-width: 200px;
+    background-color: Khaki;
+    text-align: center;
+    padding: 0.32em 0;
+    
+    border-radius: 0.32em;
+/*    border: 2px solid khaki;*/
+    padding: 0.64em;
+    margin-bottom: 1.5em;
+    
+    box-shadow: 0px 1px 2px 2px rgba(0,0,0,0.2);
+ 	
+    position: absolute;
+    z-index: 1;
+    
+    bottom: 100%;
+    left: 50%;
+/*    margin-left: -50%;*/
+    transform: translate(-50%,0);
+}
+
+.tooltip:hover .tooltiptext, .tooltip:hover .tri-down
+{
+    visibility: visible;
+}
+
+.tri-down
+{
+	position: absolute;
+    z-index: 2;
+    bottom: 100%;
+    left: calc(50% - 1.5em);
+	
+	visibility: hidden;
+	width: 0;
+	height: 0;
+	border-left: 1.5em solid transparent;
+	border-right: 1.5em solid transparent;
+	border-top: 2em solid Khaki;
+}
+
+.ttt-xwide { min-width: 400px !important; }

@@ -1,0 +1,703 @@
+/* force mobile devices into landscape mode? */
+
+/*@media screen and (orientation: portrait)
+{
+    html
+    {
+        transform: rotate(90deg);
+        transform-origin: right top;
+        width: 100vh;
+        overflow-x: hidden;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+}*/
+
+/* global default values */
+:root
+{
+    /*font-family: sans-serif;*/
+	/*font-family: 'Junction';*/
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 1rem;
+}
+
+/* paper-like background*/
+html, body
+{
+	background-color: #C8C8C8;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+
+#paper
+{
+	margin: 0 auto 0 auto;
+	min-height: 100%;
+	background-color: #FFFFFF;
+	/*width: 64rem; /* FIXME : eventually there will be a mobile variant */
+
+	min-width: 54rem;
+	max-width: 64rem;
+
+	box-shadow: 0px 0px 0.75rem 0 rgba(0,0,0,0.4);
+	font-size: 1.2em;
+
+	position: relative;
+}
+
+/* fixed elements */
+#header, #content
+{
+	/*margin: 0 2.5rem 0 2.5rem;*/
+	width: auto;
+	padding-left: 2.0rem;
+	padding-right: 2.0rem;
+}
+
+#header
+{
+	padding-top: 1rem;
+}
+
+#content { }
+
+#footer
+{
+    position: absolute;
+    bottom: 0;
+    height: 4rem;
+
+    bottom: 0;
+
+    width: 64rem;
+    padding: 1rem 0 1rem 0;
+
+    /*margin-top: 2rem;*/
+    box-shadow: 0px -3px 3px 0 rgba(0,0,0,0.4);
+    border-top: 2px solid #404040;
+    background-color: #EEEEEE;
+}
+
+#footer:hover
+{
+    background-color: #FFFFFF;
+}
+
+#footer-spacer
+{
+    visibility: hidden;
+    margin-top: 2rem;
+    padding: 1rem 0 1rem 0;
+    height: 4rem;
+}
+
+#disclaimer
+{
+	margin: 0 0 0 0;
+	padding: 0 0 1.25rem 0;
+    color: #444444;
+    text-align: center;
+    font-size: small;
+}
+
+/* navbar */
+#navbar
+{
+	border-top: 2px solid #404040;
+	border-bottom: 2px solid #404040;
+	
+	margin: auto;
+	margin-top: 0.5rem;
+	font-size: x-large;
+	
+	font-variant: small-caps;
+	font-weight: normal;
+	letter-spacing: 0.03em;
+	text-align: center;
+	
+	box-shadow: 0px 3px 3px 0 rgba(0,0,0,0.4);
+	
+	margin-bottom: 2rem;
+}
+
+#navbar .row a
+{
+	display: table-cell;
+	/*width: 110px;*/
+	margin: 0;
+	/*padding: 0.5rem 2.5rem 0.5rem 2.5rem;*/
+	padding: 0.3rem 1.5rem 0.3em 1.5rem;
+	background-color: #EEEEEE; /*#D8D8D8;*/
+	font-weight: bold;
+	/*color: #FFFFFF;*/
+}
+/*
+#navbar .row div a
+{
+	color: inherit;
+}*/
+
+#navbar .row a:hover, #navbar .row a:active
+{
+	background-color: #404040; /*#93cddd;*/
+	color: #FFFFFF;
+	text-shadow: 1px 0px 0px white;
+}
+
+.equidist
+{
+	display: flex;
+	justify-content: space-between;
+	margin: auto;
+}
+
+/* default anchor styles */
+
+a { color: black; padding: 0; margin: 0; }
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:active { text-decoration: underline; }
+
+.flow .link
+{
+	font-variant: small-caps;
+	font-size: larger;
+	font-weight: bold;
+	font-style: oblique;
+	/*font-weight: bold;*/
+}
+
+/* image styles */
+img.logo
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.2rem;
+    height: 7.3rem;
+}
+
+img.pimg
+{
+	/*align: center;
+    display: float;*/
+    float: right;
+    margin-left: auto;
+    margin-right: auto;
+    width: 28rem;
+}
+
+img.plot
+{
+	align: center;
+	max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img.ischar
+{
+    display: inline-block;
+    /*vertical-align: middle;
+    width: 1.20em;
+    height: 1.20em;*/
+
+    vertical-align: super;
+    width: 0.8em;
+    height: 0.8em;
+
+    padding: 0 0.1em 0 0.1em;
+    margin: 0;
+}
+
+/* fallback CSS for alt text */
+img, .fallback-text
+{
+	text-align: center;
+	/*ont-variant: small-caps;*/
+	font-weight: normal;
+	font-size: normal;
+}
+
+/* p styles */
+p.flow
+{
+	/*font-size: normal;*/
+	text-align: justify;
+	margin-bottom: 1em;
+}
+
+h3 + .flow
+{
+	margin-top: 0em;
+}
+
+.flow + h3
+{
+	margin-top: 1.5em;
+}
+
+.center-text
+{
+	/*font-size: normal;*/
+	text-align: center;
+}
+
+p.title
+{
+	margin-top: 0.2rem;
+	padding-top: 0.2rem;
+	padding-bottom: 0.4rem;
+	margin-bottom: 0.4rem;
+	text-align: center;
+	font-size: large;
+}
+
+/* bonus-styles */
+
+.supem
+{
+    vertical-align: super;
+    padding-left: 0.25em;
+    color: blue;
+    font-weight: bold;
+    /*font-style: italic;*/
+    /*font-size: larger;*/
+    /*line-height: 0px;
+    height: 0px;*/
+}
+
+span.mono {
+    padding-left: 1ch;
+    padding-right: 1ch;
+    font-size: smaller;
+    font-family: monospace;
+    background-color: lightgrey;
+}
+
+/** div-p-mixture
+ *
+ * Neither block nor inline-block elements are allowed in a default p-tag.
+ * This is a workaround that defines a div-class with the default p style.
+**/
+
+div.paragraph
+{
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/* box-styles */
+
+div.embox
+{
+    background-color: #EEEEEE;
+    box-shadow: 0.0rem 0.0rem 0.30rem 0.1rem rgba(0,0,0,0.4);
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.embox+.embox { margin-top: 1.5rem; }
+
+div.indent
+{
+    background-color: #DDDDDD;
+    box-shadow: 0.0rem 0.0rem 0.30rem 0.1rem rgba(0,0,0,0.4);
+    padding: 0.3rem;
+    margin: 2rem 6rem 2rem 6rem;
+}
+
+/*.darkbox { background-color: #DDDDDD; }*/
+
+div.mono
+{
+	font-family: monospace; 
+	font-size: small;
+	width: 60%;
+	min-width: 80ch;
+	border: 2px solid #404040;
+	padding: 10px;
+	margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    white-space: pre-wrap;
+    overflow: auto;
+    height: 20rem;
+}
+
+div.plot
+{
+	padding: 10px;
+	margin: auto;
+	/*max-width: 700px;*/
+	cursor: pointer;
+}
+
+div.error
+{
+    border: 2px solid #404040;
+    background-color: lightCoral; /*#FFAAAA;*/
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0.10rem 0.10rem 0.40rem 0 rgba(0,0,0,0.6);
+}
+
+div.sect
+{
+	width: 100%;
+	margin-top: 2rem;
+	border-top: 2px solid #404040;
+	padding-top: 1rem;
+}
+
+.sect+.sect
+{
+	margin-top: 1rem;
+	padding-top: 1rem;
+}
+
+/* math */
+
+div.math-container
+{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 80%;
+    margin: auto;
+    padding: 1em 0em 1em 0em;
+}
+
+div.math-label
+{
+    float: left;
+    width: 4ch;
+    text-align: right;
+    margin-right: 1ch;
+    margin-top: 1em;
+    font-family: monospace;
+    font-size: smaller;
+    display: table-cell;
+}
+div.math-formula
+{
+    /*float: right;*/
+    display: inline-block;
+    margin: auto;
+    text-align: center;
+
+    /*font-style: italic;*/
+    font-family: 'Source Serif Pro', serif;
+}
+
+div.math-fraction
+{
+    display: inline-block;
+    vertical-align:middle;
+}
+
+div.math-frac-elem
+{
+    display: block;
+    margin: auto;
+    padding: 2px 4px 2px 4px;
+}
+
+div.math-frac-elem + div.math-frac-elem
+{
+    border-top: 2px solid black;
+}
+
+/* text resizing using VH / JS is not working/unfeasable */
+div.math-double, div.math-onehalf
+{
+    display: inline;
+    font-size: 250%;
+    font-weight: 100;
+    font-style: normal;
+    vertical-align: -12.5%;
+}
+
+div.math-double { font-size: 250%; }
+div.math-onehalf { font-size: 175%; }
+
+.math-formula > sub, .math-formula > sup { font-size: 75%; padding: 0 2px 0 2px; }
+
+.math-double > sup, .math-onehalf > sup { vertical-align: text-top; }
+.math-double > sub, .math-onehalf { vertical-align: text-bottom; }
+.math-double > sup, .math-double > sub, .math-onehalf > sup, .math-onehalf > sub
+{
+    font-size: 1rem; /*1em*/
+    font-weight: normal;
+}
+
+div.math-sum
+{
+    display: inline-block;
+    vertical-align:middle;
+}
+
+div.math-sum-sigma
+{
+    font-size: 200%;
+    text-transform: uppercase;
+    /*background-color: red;*/
+    margin: 0;
+    padding: 0;
+    line-height: 0.85em;
+    font-style: normal;
+}
+
+div.math-sum-from, div.math-sum-to
+{
+    line-height: 0.85em;
+    /*background-color: green;*/
+}
+
+.math-serif { font-family: 'Source Serif Pro', serif; font-size: 100%; line-height: 0; height: 0; margin-top: -3px; padding: 0; }
+.math-numeric, .mn, mn { font-style: normal; font-family: 'Source Serif Pro', serif; padding-left: 3px; }
+.math-symbol, .ms, ms { font-style: italic; font-family: 'Source Serif Pro', serif; }
+.math-text, .mt, mt
+{
+    font-style: normal;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0 1em 0 1em;
+}
+
+
+/* header styles */
+
+h2, h3, .head
+{
+	/*font-variant: small-caps;*/
+	font-weight: normal;
+	font-size: larger;
+	text-align: left;
+	margin-top: 0rem;
+	margin-bottom: 0.3rem;
+	padding-top: 0rem;
+	padding-bottom: 0.3rem;
+}
+
+h2 { font-variant: small-caps; font-weight: bold; }
+h3 { font-variant: small-caps; font-weight: normal; }
+
+span.head
+{
+    float: left;
+	width: 5em;
+	margin: 0em 1em 0em 0em;
+	padding: 0;
+	font-weight: bold;
+	transform: translate(0,-0.2em);
+}
+
+.emph-head
+{
+    font-weight: bold;
+	font-size: larger;
+}
+
+.smallhead
+{
+    font-weight: normal;
+	font-size: larger;
+	text-align: left;
+    float: left;
+	width: 3.5em;
+	margin: 0em 1em 0em 0em;
+	padding: 0;
+	font-weight: bold;
+	transform: translate(0,-0.2em);
+}
+
+span.uhead
+{
+    font-weight: normal;
+	font-size: larger;
+	text-align: center;
+	margin: 0 1em 0 0;
+	padding-top: 0;
+}
+
+
+/* figure styles */
+div.figure
+{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.figure img
+{
+    width: 100%;
+    padding: 0;
+}
+
+.figure + .figure { margin-bottom: 1.5em; }
+.figure + .flow { margin-top: 1.5em; }
+
+.caption
+{
+    font-size: smaller;
+    text-align: justify;
+    font-style: italic;
+    margin: 0em 1em 1em 1.5em;
+    padding: 0;
+}
+
+/* form */
+input.pdb
+{
+	text-transform:uppercase;
+}
+
+#upform
+{}
+
+/*.form+.form
+{
+	margin-top: 1rem;
+}*/
+
+button { float: right; }
+
+/* others & general classes */
+.citation
+{
+	font-size: 1em;
+	text-align: center;
+}
+
+.cit-open
+{
+    display: inline-block;
+    height: 3em;
+    width: 3em;
+    margin: auto 0em auto 2em;
+    float: left;
+}
+
+.cit-close
+{
+    display: inline-block;
+    height: 3em;
+    width: 3em;
+    margin: auto 2em auto 0em;
+    float: right;
+}
+
+.reference
+{
+    font-size: smaller;
+    margin-top: 1em;
+}
+
+.reference + .reference { margin-bottom: 0.5em; }
+
+#throbber
+{
+    display: block;
+	margin: auto;
+	max-height: 2rem;
+	vertical-align: middle;
+}
+
+.click-here
+{
+	padding: 0.3rem;
+	margin: 1rem 1rem 1rem 1rem;
+	
+	background-color: #EEEEEE;
+	box-shadow: 0.0rem 0.0rem 0.30rem 0.1rem rgba(0,0,0,0.4);
+	
+	width: 15ch;
+	font-size: larger;
+	font-variant: small-caps;
+	font-weight: bold;
+	text-align: center;
+	
+	display: inline-block;
+}
+
+.click-here:hover
+{
+	background-color: #404040; /*#93cddd;*/
+	color: #FFFFFF;
+}
+
+.click-green
+{
+    background-color: #BBF3BB;
+    box-shadow: 0.0rem 0.0rem 0.30rem 0.1rem rgba(0,65,0,0.4);
+}
+
+.click-green:hover { background-color: #40C040; }
+
+.click-red
+{
+    background-color: #F3BBBB;
+    box-shadow: 0.0rem 0.0rem 0.30rem 0.1rem rgba(65,0,0,0.4);
+}
+.click-red:hover { background-color: #C04040; }
+
+.clickable { cursor: pointer; }
+
+.standout:hover
+{
+    box-shadow: 0.0rem 0.0rem 0.30rem 0.1rem rgba(0,0,0,0.4);
+    background-color: #EEEEEE;
+}
+
+.vcenter
+{
+    /*vertical-align: center;*/
+    text-align: center;
+    vertical-align: middle;
+}
+
+.left { float: left; }
+.right { float: right; }
+.center { margin-left: auto; margin-right: auto; }
+.inline-block { display: inline-block; }
+
+.bottom { position: absolute; bottom: 0; }
+.relative { position: relative; }
+
+.no-margin { margin: 0; }
+.no-margin+.no-margin { margin-top: 1rem; }
+
+.xb-margin1d2 { margin-bottom: 0.25em; }
+.xb-margin1 { margin-bottom: 1em; }
+.xb-margin  { margin-bottom: 2em; }
+.xb-padding { padding-bottom: 2em; }
+
+.line-1p5 { line-height: 1.5; }
+
+hr { margin-top: 2rem; }
+
+.inline-icon
+{
+    display: inline;
+    max-height: 1em;
+    width: auto;
+    margin: auto 0.0em auto 0.4em;
+}
+
+.invisible { display: none; }
+
+.dbg
+{
+	background-color: #DDBBBB;
+}

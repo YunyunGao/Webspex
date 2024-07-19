@@ -1,0 +1,9 @@
+# requirements.in
+Flask
+Flask-Redis
+Flask-RQ2
+hiredis
+rq
+rq-scheduler
+retricon
+redis >= 3.0, < 3.1

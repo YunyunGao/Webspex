@@ -1,0 +1,12 @@
+[Unit]
+Description=RQWorker
+After=network.target redis
+
+[Service]
+Type=simple
+User=auspex
+WorkingDirectory=/data/jobs/
+ExecStart=/usr/bin/sh -c '. /opt/ccp4/ccp4-7.1/bin/ccp4.setup-sh && PYTHONPATH=/srv/www/webspex /home/auspex/.local/bin/rqworker'
+
+[Install]
+WantedBy=multi-user.target

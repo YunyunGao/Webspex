@@ -1,0 +1,12 @@
+[Unit]
+Description=RQWorker
+After=network.target redis
+
+[Service]
+Type=simple
+User=auspex
+WorkingDirectory=/data/jobs/
+ExecStart=/usr/bin/sh -c '. /home/auspex/miniconda3/etc/profile.d/conda.sh && conda activate auspex && PYTHONPATH=/srv/www/webspex /home/auspex/miniconda3/envs/auspex/bin/rqworker'
+
+[Install]
+WantedBy=multi-user.target

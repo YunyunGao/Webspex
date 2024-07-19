@@ -1,0 +1,351 @@
+auspex
+exit
+auspex
+cd /srv/www/
+ls
+. venv/bin/activate
+FLASK_APP=webspex flask run --host=0.0.0.0
+pip
+which pip
+which python
+which python3
+cd ..
+cd www
+exit
+/bin/sh -c 'PYTHONPATH=/srv/www/webspex rqworker'
+ls
+sudo cp uwsgi-webspex.service /etc/systemd/system
+sudo systemctl start uwsgi-webspex
+sudo systemctl status uwsgi-webspex
+ls /etc/
+pip3 install uwsgi
+sudo mkdir /etc/uwsgi
+sudo cp webspex.ini /etc/uwsgi
+sudo systemctl start uwsgi-webspex
+sudo systemctl status uwsgi-webspex
+nano /etc/uwsgi/webspex.ini 
+ls -l /etc/uwsgi
+nano /etc/systemd/system/uwsgi-webspex.service 
+uwsgi
+which uwsgi
+sudo nano /etc/systemd/system/uwsgi-webspex.service 
+sudo systemctl status uwsgi-webspex
+sudo systemctl start uwsgi-webspex
+systemctl daemon-reload
+sudo systemctl daemon-reload
+sudo systemctl start uwsgi-webspex
+sudo systemctl status uwsgi-webspex
+sudo systemctl enable uwsgi-webspex.service
+sudo service nginx restart
+sudo service nginx status
+cd /etc/nginx/
+ls
+cd ~
+ls
+cd /data
+ls
+mkdir redis
+cd ~
+ls
+cd /etc
+sudo mkdir redis
+ls redis
+cd redis
+ls
+ls redis/
+sudo ls redis/
+nano redis.conf
+sudo nano redis.conf
+sudo cp ~/webspex.conf redis/
+sudo ls redis
+cd ~
+rworker
+rqworker
+PYTHONPATH=/srv/www/webspex rqworker
+nano rqworker.service 
+sudo cp rqworker.service /etc/systemd/system
+systemctl restart redis@webspex
+sudo systemctl restart redis@webspex
+sudo systemctl restart redis
+ls -l /data
+sudo chown -R redis:redis /data/redis
+sudo systemctl restart redis
+sudo systemctl restart redis@webspex
+sudo mkdir /etc/systemd/system/redis.target.wants
+sudo cp redis@webspex.service /etc/systemd/system/redis.target.wants/
+sudo systemctl restart redis@webspex
+systemctl status redis@webspex
+systemctl start redis@webspex
+sudo systemctl start redis@webspex
+sudo systemctl enable redis@webspex
+sudo systemctl stop redis
+redis-cli
+sudo cp /etc/systemd/system/redis.target.wants/redis@webspex.service /etc/systemd/system/
+sudo systemctl start redis@webspex
+sudo systemctl enable redis@webspex
+sudo systemctl status redis@webspex
+sudo systemctl start redis
+redis-server
+redis-cli
+systemctl start rqworker
+sudo systemctl start rqworker
+sudo systemctl status rqworker
+sudo nano /etc/systemd/system/rqworker.service 
+sudo systemctl start rqworker
+sudo systemctl status rqworker
+sudo systemctl stop rqworker
+sudo systemctl stop redis
+sudo systemctl start redis
+redis-server
+ls /etc/systemd/system
+sudo systemctl stop redis
+redis-cli
+sudo systemctl start redis@webspex
+sudo systemctl status redis@webspex
+redis server
+redis-cli
+sudo systemctl start redis
+sudo systemctl status redis
+sudo nano /etc/systemd/system/rqworker.service 
+ls /bin/sh
+/bin/sh PYTHONPATH=/srv/www/webspex rqworker
+/bin/sh -c 'PYTHONPATH=/srv/www/webspex rqworker'
+sudo systemctl start rqworker
+systemctl daemon-reload
+sudo systemctl daemon-reload
+sudo systemctl start rqworker
+redis
+redis-cli
+sudo systemctl restart nginx
+sudo systemctl restart uwsgi-webspex
+sudo systemctl status rqworker
+sudo systemctl stop rqworker
+sudo nano /etc/systemd/system/rqworker.service 
+/bin/sh -c 'PYTHONPATH=/srv/www/webspex rqworker'
+sudo nano /etc/systemd/system/rqworker.service 
+/bin/sh -c '/opt/ccp4/ccp4-7.1/start PYTHONPATH=/srv/www/webspex rqworker'
+/bin/sh -c '/opt/ccp4/ccp4-7.1/start && PYTHONPATH=/srv/www/webspex rqworker'
+ls
+top
+/bin/sh PYTHONPATH=/srv/www/webspex rqworker
+PYTHONPATH=/srv/www/webspex rqworker
+source /opt/ccp4/ccp4-7.1/BINARY.setup 
+source /opt/ccp4/ccp4-7.1/bin/ccp4.setup-sh 
+auspex
+PYTHONPATH=/srv/www/webspex rqworker
+source /opt/ccp4/ccp4-7.1/bin/ccp4.setup-sh 
+PYTHONPATH=/srv/www/webspex rqworker
+source /opt/ccp4/ccp4-7.1/bin/ccp4.setup-sh 
+PYTHONPATH=/srv/www/webspex rqworker
+source /opt/ccp4/ccp4-7.1/bin/ccp4.setup-sh 
+PYTHONPATH=/srv/www/webspex rqworker
+exit
+google-authenticator 
+reboot
+restart
+boot
+sudo reboot
+source /opt/ccp4/ccp4-7.1/bin/ccp4.setup-sh 
+PYTHONPATH=/srv/www/webspex rqworker
+source /opt/ccp4/ccp4-7.1/bin/ccp4.setup-sh 
+PYTHONPATH=/srv/www/webspex rqworker
+cd /data
+ls
+cd ..
+ls
+cd data
+cd mtz
+ls
+cd ..
+python2
+cd ..
+source /opt/ccp4/ccp4-7.1/bin/ccp4.setup-sh 
+PYTHONPATH=/srv/www/webspex rqworker
+source /opt/ccp4/ccp4-7.1/bin/ccp4.setup-sh 
+PYTHONPATH=/srv/www/webspex rqworker
+source /opt/ccp4/ccp4-7.1/bin/ccp4.setup-sh 
+PYTHONPATH=/srv/www/webspex rqworker
+ls /data/
+PYTHONPATH=/srv/www/webspex rqworker
+ls 
+PYTHONPATH=/srv/www/webspex rqworker
+source /opt/ccp4/ccp4-7.1/bin/ccp4.setup-sh 
+PYTHONPATH=/srv/www/webspex rqworker
+source /opt/ccp4/ccp4-7.1/bin/ccp4.setup-sh 
+PYTHONPATH=/srv/www/webspex rqworker
+source /opt/ccp4/ccp4-7.1/bin/ccp4.setup-sh 
+PYTHONPATH=/srv/www/webspex rqworker
+ls
+cerbot renew --nginx --server https://acme-vo2.api.letsencrypt.org -agree-tos
+certbot renew --nginx --server https://acme-vo2.api.letsencrypt.org -agree-tos
+nginx
+sudo certbot renew --nginx --server https://acme-vo2.api.letsencrypt.org -agree-tos
+sudo certbot renew --nginx --server https://acme-vo2.api.letsencrypt.org --agree-tos
+sudo service nginx status
+sudo service nginx restart
+sudo systemctl status nginx.service
+sudo nginx -t
+sudo touch /var/log/nginx/error.log
+cd /var/log
+ls
+mkdir nginx
+sudo mkdir nginx
+cd nginx
+sudo touch error.log
+sudo touch access.log
+sudo chmod 750 *.log
+sudo service nginx restart
+sudo systemctl deamon-relod
+sudo systemctl status nginx.service
+sudo systemctl reload nginx
+sudo service nginx restart
+sudo nginx -t
+sudo systemctl restart uwsgi-webspex
+sudo systemctl status uwsgi-webspex
+sudo systemctl start uwsgi-webspex
+sudo systemctl status uwsgi-webspex.service
+uwsgi
+cd /etc/uwsgi
+ls
+nano webspex.ini 
+ls /svr/www
+nano webspex.ini 
+cd /
+ls
+cs /srv
+cd srv
+ls
+cd /etc/uwsgi
+nano webspex.ini 
+ll
+nano webspex.ini 
+cd /srv/www
+ll
+ls -l 
+cd ..
+ls -l
+/usr/bin/uwsgi --ini /etc/uwsgi/webspex.ini
+cd /var/log
+ls
+sudo mkdir uwsgi
+cd uwsgi
+sudo touch webspex.log
+sudo chmod 750 *.log
+sudo systemctl start uwsgi-webspex
+/usr/bin/uwsgi --ini /etc/uwsgi/webspex.ini
+ls
+ls -l
+sudo /usr/bin/uwsgi --ini /etc/uwsgi/webspex.ini
+sudo systemctl start uwsgi-webspex
+sudo systemctl status uwsgi-webspex
+uwsgi 
+nano /var/log/uwsgi/webspex.log 
+journalctl -xe
+sudo journalctl -xe
+sudo systemctl start uwsgi-webspex
+which uwsgi
+uwsgi --ini /etc/uwsgi/webspex.ini
+sudo uwsgi --ini /etc/uwsgi/webspex.ini
+sudo uwsgi /etc/uwsgi/webspex.ini
+nano /etc/uwsgi/webspex.ini 
+rm webspex.log 
+sudo rm webspex.log 
+sudo uwsgi --ini /etc/uwsgi/webspex.ini
+nano /etc/uwsgi/webspex.ini 
+sudo nano /etc/uwsgi/webspex.ini 
+sudo uwsgi --ini /etc/uwsgi/webspex.ini
+sudo systemctl start uwsgi-webspex
+sudo systemctl status uwsgi-webspex
+sudo systemctl daemon-reload
+sudo systemctl enable uwsgi-webspex.service
+sudo service nginx restart
+sudo system restart redis@webspex
+sudo systemctl restart redis@webspex
+sudo systemctl start redis
+redis-server
+sudo systemctl restart redis@webspex
+sudo systemctl restart redis
+sudo status redis-server.service
+sudo systemctl status redis-server.service
+sudo systemctl status redis@webspex
+
+sudo systemctl stop redis
+sudo systemctl enable redis@webspex
+sudo systemctl status redis@webspex
+redis-server /etc/redis/webspex.conf
+sudo redis-server /etc/redis/webspex.conf
+cd ..
+sudo mkdir redis
+sudo chmod 777 redis
+sudo redis-server /etc/redis/webspex.conf
+sudo nano /etc/redis/webspex.conf
+ls- l
+ls -l
+cd redis 
+ls
+ls -l
+sudo systemctl start redis
+sudo systemctl start redis@webspex
+sudo systemctl status redis@webspex
+sudo systemctl status redis
+sudo systemctl start redis@webspex
+sudo systemctl status redis@webspex
+sudo systemctl daemon-reload
+sudo systemctl restart nginx
+sudo systemctl restart uwsgi-webspex
+source /opt/ccp4/ccp4-7.1/bin/ccp4.setup-sh 
+PYTHONPATH=/srv/www/webspex rqworker
+sudo systemctl start rqworker
+sudo systemctl status rqworker
+sudo systemctl restart rqworker
+systemctl daemon-reload
+sudo systemctl restart rqworker
+sudo systemctl status rqworker
+source /opt/ccp4/ccp4-7.1/bin/ccp4.setup-sh
+source /opt/ccp4/ccp4-7.1/bin/ccp4.setup-sh && PYTHONPATH=/srv/www/webspex rqworker
+which sh
+sudo systemctl restart rqworker
+sudo systemctl status rqworker
+sudo systemctl stop rqworker
+systemctl daemon-reload
+sudo systemctl status rqworker
+sudo systemctl restart rqworker
+sudo systemctl status rqworker
+which bash
+sudo systemctl restart rqworker
+systemctl daemon-reload
+sudo systemctl status rqworker
+sudo systemctl restart redis@webspex
+sudo systemctl restart redis
+sudo systemctl restart rqworker
+sudo systemctl status rqworker
+sudo systemctl restart rqworker
+sudo systemctl status rqworker
+sudo systemctl stop rqworker
+systemctl daemon-reload
+sudo systemctl start rqworker
+sudo systemctl status rqworker
+. /opt/ccp4/ccp4-7.1/bin/ccp4.setup-sh && PYTHONPATH=/srv/www/webspex rqworker
+which sh
+echo $shell
+which rqworker
+sudo systemctl stop rqworker
+sudo systemctl start rqworker
+systemctl daemon-reload
+sudo systemctl status rqworker
+sudo systemctl restart redis
+sudo systemctl restart redis@webspex
+sudo systemctl status rqworker
+sudo systemctl restart rqworker
+sudo systemctl status rqworker
+exit
+cd /var/log
+sudo chmod 750 uwsgi
+sudo chmod 777 uwsgi
+cd /etc/systemd/
+ls
+cd system
+ls
+nano rqworker.service
+sudo nano rqworker.service
+exit

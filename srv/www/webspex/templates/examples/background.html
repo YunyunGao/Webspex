@@ -1,0 +1,20 @@
+<p class="flow">
+If all intensity values are systematically too high this is due to an incorrect background estimation, which can be the result of a suboptimal background estimation during integration, or stem from a very high background during measurement, for example when the loop holding the crystal was too large, and there is diffuse scattering from the cooled liquid in which the crystal sits.
+</p>
+
+<div class="figure">
+    <img src="{{ url_for('static', filename=exItem['image']) }}" />
+    <p class="caption">
+        AUSPEX plot for PDB entry 5KSC: these neutron diffraction data were integrated with MANTID, a program for neutron diffraction data. MANTID is not specialized for protein diffraction, which often contains more background than small molecule diffraction data. This leads to a background-misestimation - the background is not correctly substracted from the reflections and all intensity values are systematically too high.
+    </p>
+</div>
+
+<p class="flow">
+    <span class="head">Problem:</span>
+    This can affect the structure solution.
+</p>
+
+<p class="flow">
+    <span class="head">Advice:</span>
+    Repeat integration with several integration and scaling algorithms; optimize experimental conditions. For neutron data, ask your beamline scientist for additional advice.
+</p>

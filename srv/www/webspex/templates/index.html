@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}About{% endblock %}
+{% block content %}
+    <p class="flow xb-margin">
+        <em>AUSPEX</em> is a diagnostic tool for graphical X-Ray data analysis, which enable users to visually and automatically
+        detect ice-ring artefacts and other problems in integrated X-ray diffraction data.
+    </p>
+
+    <img src="{{ url_for('static', filename='example.png') }}" alt="Example Auspex Plot" class="pimg" />
+
+    <p class="center-text">
+        If you would like to plot your own data
+        <a href="{{ url_for('upform') }}"><span class="click-here">Run Auspex</span></a>
+    </p>
+
+    <p class="center-text">
+        Some examples of common pathologies are available
+        <a href="{{ url_for('pathol') }}"><span class="click-here">Examples</span></a>
+    </p>
+
+    <p class="flow">
+        For a more detailed description of AUSPEX and our systematic study of the PDB, please look at the bottom of this page.
+    </p>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+<!--<div class="table">
+    <div class="row">
+        <div class="cell vcenter">
+            <img class="modal-ex-preview" src="{{ url_for('static', filename=exItem['preview']) }}" />
+        </div>
+        <div class="cell">
+            <img class="modal-ex-img" src="{{ url_for('static', filename=exItem['image']) }}" />
+        </div>
+    </div>
+</div>-->
+
+<div class="figure">
+    <img src="{{ url_for('static', filename=exItem['image']) }}" />
+    <p class="caption">
+        PDB entry 5GTV: The incorrectly integrated reflections are clearly visible at approximately 30 Angstrom resolution,
+        indicating a missing mask for the beam stop.
+    </p>
+</div>
+
+<p class="flow">
+    Reflections with intensity or amplitude values near 0 at low resolution indicate that the beam stop was not masked
+    or not masked out completely in integration.
+</p>
+
+<p class="flow">
+    <span class="head">Problem:</span>
+    These bad low resolution reflections can impair phasing and refinement, in particular if the anomalous signal is to
+    be used.
+</p>
+
+<p class="flow">
+    <span class="head">Advice:</span>
+    Repeat data processing with a correct beam stop mask. If this is not possible, use a suitable low resolution cutoff.
+</p>

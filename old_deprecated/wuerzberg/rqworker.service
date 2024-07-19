@@ -1,0 +1,13 @@
+[Unit]
+Description=RQWorker
+After=network.target redis@webspex.service
+
+[Service]
+Type=simple
+User=auspex
+WorkingDirectory=/data/jobs/
+Environment=PATH='/home/auspex/miniconda3/bin'
+ExecStart=PYTHONPATH=/srv/www/webspex rqworker
+
+[Install]
+WantedBy=multi-user.target

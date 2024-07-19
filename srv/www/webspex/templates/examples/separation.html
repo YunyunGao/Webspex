@@ -1,0 +1,24 @@
+<p class="flow">
+    Separation of distributions in <span class="math-serif">&sigma;(F)</span>: Effects of conversion from intensities to amplitudes
+    F<sub>obs</sub> is needed to calculate electron density maps, and is also used as observations against which many programs optimize structural models. Some exceptions are PHASER where an intensity-based log likelihood target is used to avoid problems related to the conversion from <span class="math-serif">I<sub>obs</sub></span> to <span class="math-serif">F<sub>obs</sub></span>, REFMAC twin refinement and SHELXL which refine against <span class="math-serif">I<sub>obs</sub></span>. This also has the advantage of retaining all statistical properties, some of which (such as negative values) get lost in most conversion methods. Conversion from intensities <span class="math-serif">I<sub>obs</sub></span> to structure factor amplitudes <span class="math-serif">F<sub>obs</sub></span> is usually performed using the French & Wilson algorithm, which uses a Bayesian approach prior that forces negative <span class="math-serif">F<sub>obs</sub></span> values to be positive or 0 valued, and Wilson distributed. This prior may not be approriate if the data are contaminated by ice rings or if other systematic errors are present. The changes introduced by the conversion, as implemented for example in CTRUNCATE, can be illustrated by comparing AUSPEX plots of <span class="math-serif">I<sub>obs</sub>/&sigma;(I<sub>obs</sub>)</span> with <span class="math-serif">F<sub>obs</sub>/&sigma;(F<sub>obs</sub>)</span>.
+</p>
+
+<div class="figure">
+    <img src="{{ url_for('static', filename=exItem['image']) }}" />
+    <p class="caption">
+        <b>A.</b> I<sub>obs</sub>/&sigma;(I<sub>obs</sub>) vs resolution. <b>B.</b> F<sub>obs</sub>/&sigma;(F<sub>obs</sub>) does not contain any F<sub>obs</sub>/&sigma;(F<sub>obs</sub>) equal to or smaller than 0. The centric reflections are visible as a thin line of values lower than the majority of the others (inside the red box).
+        <b>C.</b>/<b>D.</b> While the ice rings have high &sigma;(I<sub>obs</sub>), &sigma;(F<sub>obs</sub>) are dominated by the prior distribution, which is exponential or super exponential, leading to smaller than average &sigma;(F<sub>obs</sub>) for the ice-ring reflections. In addition, &sigma;(F<sub>obs</sub>) values form two distinct clusters (red dashed ellipses), which is a typical effect of the conversion in CTRUNCATE.
+    </p>
+</div>
+
+<p class="flow">
+    <span class="head">Problem:</span>
+    If your data were statistically not ideally distributed (i.e .Wilson-distributed), this can lead to problems when <span class="math-serif">&sigma;(F<sub>obs</sub>)</span> is used.
+</p>
+
+<p class="flow">
+    <span class="head">Advice:</span>
+    Use intensities instead of amplitudes where possible.
+</p>
+
+

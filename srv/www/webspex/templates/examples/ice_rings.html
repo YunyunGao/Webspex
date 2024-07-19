@@ -1,0 +1,50 @@
+<p class="flow">
+    Ice rings are visible in AUSPEX plots as distinct spikes of values in I<sub>obs</sub> or F<sub>obs</sub> outside of the typical values;
+    They are Debye-Scherrer rings which can be observed at specific resolutions as a result of X-ray diffraction from a multitude of arbitrarily oriented, typically hexagonal or cubic, ice crystals.
+    Ice rings can cause problems in data processing and modelling, and may in extreme cases even prevent structure solution. <br>
+    In AUSPEX, ice rings can be flagged red; however, automatic detection is not as reliable as visual inspection. Hence we give some guidance below what ice rings can look like in AUSPEX plots.
+</p>
+
+<div class="figure">
+    <img src="{{ url_for('static', filename=exItem['image']) }}" />
+    <p class="caption">
+        <b>A.</b> AUSPEX plot of I<sub>obs</sub> vs. resolution for PDB entry 4EPZ. The resolution ranges corresponding to potential ice rings are marked using grey bars. Two ice rings are clearly visible at high resolution, while the other were successfully modelled in integration. Hence, when identifying ice rings in integrated data, the presence of all ice rings in question is not a reliable criterion.
+        <b>B.</b> Background over- and underestimation: This enlarged view of the ice ring at 1.918 Å shows the effects of insufficient background correction: the blue line shows the background as it is likely assumed by the integration program. The yellow line shows the likely background caused by ice. The discrepancy causes an underestimation of Iobs values left and right of the ice ring, resulting in large negative intensity values, and an overestimation of Iobs in the ice ring, resulting in a peak of Iobs values. However, ice rings do not necessary follow this pattern. <!-- (see below). -->
+   </p>
+</div>
+
+<p class="flow">
+    <span class="head">Problem:</span>
+    You had ice on your crystal or sample holder during the measurement. The ice may have been from the cooling of the crystals, or built up during the measurement.
+</p>
+
+<p class="flow">
+    <span class="head">Advice:</span>
+    If possible, try to collect data without ice diffraction. This can be done by optimizing your cryo conditions and the experimental setup. Ensure that all liquid nitrogen used is dry. Sometimes, if ice rings are encountered during measurements, crystals can be rinsed on the holder with liquid nitrogen to remove ice particles from the sample.
+    If this is not possible, or the ice rings are only identified after measurement, you can
+    <ul>
+        <!-- FIXME: Implement unique modal content ids. -->
+    <li>Mask out the ice rings during integration. This will result in a loss of data completeness, see <span class="clickable" onclick="pushModal(4)"><b>Missing Rings</b></span>.<br></li>
+    <li>Try to re-integrate with DIALS using the new background estimation for ice rings [Parkhurst, 2017]. The ice ring background estimation is available in DIALS but it is not default.
+        Essentially, you need to do the following at the moment:
+        <ol>
+            <li>Integrate as normal: <span class="mono">dials.integrate refined_experiments.json refined.pickle</span></li>
+            <li>Run <span class="mono">dials.model_background integrated_experiments.json</span> to create background.pickle which contains the global background model</li>
+            <li>Run integration again: <span class="mono">dials.integrate refined_experiments.json refined.pickle background.algorithm=gmodel gmodel.model=background.pickle</span></li>
+        </ol>
+    </li>
+    </ul>
+</p>
+
+
+    
+<!--<div class="figure">
+    <img src="{{ url_for('static', filename=exItem['image']) }}" />
+    <p class="caption">
+    Ice rings for PDB entry XXX. Ice rings are not as distinct as above, as ice built up during measurement, leading to outliers and well-behaved reflections at the same resolution.
+   </p>
+</div>-->
+
+<p class="reference">
+    Parkhurst, J. M., Thorn, A., Vollmar, M., Winter, G., Waterman, D. G., Gildea, R. J., Fuentes-Montero, L., Murshudov, G. N. & Evans, G. (2017). <i>IUCrJ</i>, <b>4</b>, 626–638.
+</p>

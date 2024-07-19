@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block title %}Index{% endblock %}
+{% block content %}
+
+    <p class="ptext">
+        AUSPEX plots enable users to visually and automatically detect ice-ring artefacts and other problems in integrated
+        X-ray diffraction data.
+    </p>
+
+    <img src="{{ url_for('static', filename='example.jpg') }}" alt="Example Auspex Plot" class="pimg" />
+
+    <p class="ptext">
+        For a reference of the most common pathologies, please look up the paper, which is open access (link below).
+    </p>
+    <p class="ptext">
+        In order to run the program, you will need a MTZ format file with your observed intensities (typical column names are I, IOBS),
+        or if not available, the amplitudes calculated from the intensities (typical column names are FOBS, F, FP).
+    </p>
+    <p class="ptext">
+        Alternatively, a PDB code can be specified to generate AUSPEX plots from data deposited to the PDB.
+        Please note that not all PDB entries include intensities or amplitudes.
+    </p>
+
+    <div class="crbox">
+        <form method="get" action="{{ url_for('pdb') }}">
+            <label for="code">
+                <span class="boxhead">PDB-Code</span>
+                <input maxlength="4" name="code" class="pdbinput" value="4PUC"/>
+            </label>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!--<center><b><i>OR</b></i></center>-->
+
+    <div class="crbox">
+        <form method="post" action="{{ url_for('upload') }}" enctype="multipart/form-data">
+            <label for="file">
+                <span class="boxhead">MTZ-File</span>
+                <input type="file" accept=".mtz" name="file" />
+            </label>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+{% endblock %}

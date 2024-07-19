@@ -1,0 +1,11 @@
+.table
+{
+	display: table;
+	margin: auto;
+	table-layout: auto;
+	align: center;
+	width: 100%;
+}
+
+.table .row { display: table-row; }
+.row .cell { display: table-cell; padding: 2px 5px 2px 5px; }

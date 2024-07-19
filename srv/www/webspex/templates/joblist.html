@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block head %}
+    <script type=text/javascript src="{{ url_for('static', filename='localtime.js') }}"></script>
+{% endblock %}
+{% block title %}Job List{% endblock %}
+{% block content %}
+    {% if jobList %}
+        <em>Click on jobs to view results. Move pointer over table headers to get a tooltip.</em>
+        <div class="table">
+            <div class="row">
+                <div class="cell vcenter tooltip">
+                    <p><b>Identicon</b><!--<span class="supem">?</span>--></p>
+                    <div class="tri-down"></div>
+                    <span class="tooltiptext">A unique hash-generated image to help you identify your files</span>
+                </div>
+                <div class="cell vcenter">
+                    <p><b>Name</b></p>
+                </div>
+                <div class="cell vcenter">
+                    <p><b>Submission Date</b></p>
+                </div>
+                <div class="cell vcenter">
+                    <p><b>Expiration Date</b></p>
+                </div>
+                <div class="cell vcenter tooltip">
+                    <p><b>Status</b><!--<span class="supem">?</span>--></p>
+                    <div class="tri-down"></div>
+                    <span class="tooltiptext">
+                        Current job progression
+                    </span>
+                </div>
+                <div class="cell vcenter tooltip">
+                    <p><b>Visibility</b><!--<span class="supem">?</span>--></p>
+                    <div class="tri-down"></div>
+                    <span class="tooltiptext ttt-xwide">
+                        <b>Private</b> jobs can only be accessed from this session, whereas <b>shared</b> jobs can be accessed by others
+                    </span>
+                </div>
+            </div>
+        {% for jId, dateStr, exprStr, statStr, shrStr, startTime, stopTime, name in jobList %}
+            <a href="{{ url_for('results', id=jId) }}" class="row standout">
+                <div class="cell vcenter"><img src="{{ url_for('identicon', id=jId) }}"/></div>
+                <div class="cell vcenter">{{ name|e }}</div>
+                <div class="cell vcenter datetime" data-timestamp="{{ startTime }}">{{ dateStr }} UTC</div>
+                <div class="cell vcenter datetime" data-timestamp="{{ stopTime }}">{{ exprStr }} UTC</div>
+                <div class="cell vcenter">{{ statStr }}</div>
+                <div class="cell vcenter">
+                    {{ shrStr }}
+                    {% if shrStr == "Private" %}
+                        <img class="inline-icon" src="{{ url_for('static', filename='lock_lr.png') }}" />
+                    {% else %}
+                        <img class="inline-icon" src="{{ url_for('static', filename='eye.png') }}" />
+                    {% endif%}
+                </div>
+            </a>
+            <div class="row"><div class="cell"><p class="xb-margin1"></p></div></div> <!-- spacing --!>
+        {% endfor %}
+        </div>
+    {% else %}
+        <h2>No jobs available.</h2>
+    {% endif %}
+
+{% endblock %}

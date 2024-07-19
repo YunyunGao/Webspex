@@ -1,0 +1,33 @@
+<p class="flow">
+If entire resolution ranges, corresponding to spheres in reciprocal space and rings on an image around the beam stop, are missing, this is typically due to masked-out ice rings. 
+</p>
+
+<div class="figure">
+    <img src="{{ url_for('static', filename=exItem['image']) }}" />
+    <p class="caption">
+        Image from PDB entry 4PUC; missing data are clearly visible as vertical blocks. Completeness 78.1%.
+    </p>
+</div>
+
+<p class="flow">
+    <span class="head">Problem:</span>
+    This can lead to a high incompleteness of the data.
+</p>
+
+<p class="flow">
+    <span class="head">Advice:</span>
+    If you have to omit ice ring ranges, cut them exactly so that the biased data are left out. <br>
+    Try to re-integrate with DIALS using the new background estimation for ice rings [Parkhurst, 2017]. The ice ring background estimation is available in DIALS but it is not default.
+    Essentially, you need to do the following at the moment:
+    <ol>
+        <li>Integrate as normal: <span class="mono">dials.integrate refined_experiments.json refined.pickle</span></li>
+        <li>Run <span class="mono">dials.model_background integrated_experiments.json</span> to create background.pickle which contains the global background model</li>
+        <li>Run integration again: <span class="mono">dials.integrate refined_experiments.json refined.pickle background.algorithm=gmodel gmodel.model=background.pickle</span></li>
+    </ol>
+</p>
+
+
+
+<p class="reference">
+    Parkhurst, J. M., Thorn, A., Vollmar, M., Winter, G., Waterman, D. G., Gildea, R. J., Fuentes-Montero, L., Murshudov, G. N. & Evans, G. (2017). <i>IUCrJ</i>, <b>4</b>, 626–638.
+</p>

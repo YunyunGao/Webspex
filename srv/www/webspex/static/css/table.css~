@@ -1,0 +1,46 @@
+/* DIV Tables */
+.table
+{
+	display: table;
+	margin: auto;
+	table-layout: auto;
+	align: center;
+	width: 100%;
+}
+
+.table .row { display: table-row; }
+.row .cell { display: table-cell; /*padding: 2px 5px 2px 5px;*/ }
+
+
+/* Examples table */
+
+.ex-cell
+{
+	display: table-cell;
+/*	background-color: red;*/
+}
+
+.ex-cell+.ex-cell { padding-left: 1.8em; }
+
+img.ex
+{
+	width: 13em;
+	display: inline-block;
+	/*border: 1px solid #404040;*/
+	box-shadow: 0.0em 0.0em 0.20em 0.1em rgba(0,0,0,0.4);
+}
+
+p.ex
+{
+	text-align: center;
+	font-variant: small-caps;
+	font-weight: normal;
+	font-size: larger;
+	padding-bottom: 0em;
+	margin-bottom: 0.6em;
+	margin-top: 0em;
+}
+
+.row+.row .ex-cell { padding-top: 1em; }
+
+.ex { cursor: pointer; }

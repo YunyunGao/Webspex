@@ -1,0 +1,14 @@
+<p class="flow">
+    Data processed with HKL/SCALEPACK can show a strictly resolution-dependent behaviour of <span class="math-serif">I<sub>obs</sub>/&sigma;(I<sub>obs</sub>)</span> values, where resolution ranges have distinct upper limits for <span class="math-serif">I<sub>obs</sub>/&sigma;(I<sub>obs</sub>)</span> values. Out of 200 structures processed with HKL/SCALEPACK picked at random from the PDB, including recent submissions, 81 show this type of behaviour. This is because in HKL, data are divided into a number of resolution shells (10, 20, 40, or a user-defined number) and an uncertainty estimate of systematic effects is defined per resolution shell. There is a default value that is uniform for all shells (3%), but users can adjust it. The stepping occurs when the systematic error estimate dominates over the statistical (random) error estimate [Gewirth, 2003], resulting in the plots shown below.
+</p>
+
+<div class="figure">
+    <img src="{{ url_for('static', filename=exItem['image']) }}" />
+    <p class="caption">
+        AUSPEX plot of PDB entry 5DEI - resolution-dependence of maximum <span class="math-serif">I<sub>obs</sub>/&sigma;(I<sub>obs</sub>)</span> is clearly visible at low and medium resolution; there are also ice rings.
+    </p>
+</div>
+
+<p class="reference">
+    Gewirth,  D.  (2003). HKL Manual. 6th  ed.  HKL  Research,  Charlottes-ville, USA.
+</p>

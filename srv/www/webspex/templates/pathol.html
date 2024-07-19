@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block title %}Pathologies{% endblock %}
+{% block head %}
+    <script type=text/javascript src="{{ url_for('static', filename='modal.js') }}"></script>
+{% endblock %}
+{% block content %}
+    <center><h2>Common pathologies and their causes</h2></center>
+    <p></p>
+
+    <div class="table">
+        {%- for rowBatch in exList|batch(3) %}
+        <div class="row">
+            {%- set outer_index=loop.index0 %}
+            {%- for exItem in rowBatch %}
+            <div class="ex-cell standout" onclick="pushModal({{ outer_index*3+loop.index }})">
+                <p class="ex">{{ exItem['title'] }}</p>
+                <img class="ex" src="{{ url_for('static', filename=exItem['preview'] ) }}" alt=""/>
+            </div>
+            {%- endfor %}
+        </div>
+        {%- endfor %}
+    </div>
+
+    <div class="modal" onclick="closeModal(event)">
+        {%- for exItem in exList %}
+        <div class="modal-content modal-fit modal-fixedheight" id="m_{{ loop.index }}">
+            <span class="close" onclick="closeModal(event)">&times;</span>
+            <h2>{{ exItem['title'] }}</h2>
+            {%- include exItem['modal'] ignore missing %}
+        </div>
+        {%- endfor %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+    <head>
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='auspex_bw_favico32.ico') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/fonts.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/tooltip.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/table.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/modal.css') }}" />
+        <title>Auspex - {% block title %}{% endblock %}</title>
+        <script type=text/javascript src="{{ url_for('static', filename='jquery.js') }}"></script>
+        {% block head %}{% endblock %}
+    </head>
+    <body><div id="paper">
+        {% block body %}{% endblock %}
+    </div></body>
+</html>

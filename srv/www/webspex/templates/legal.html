@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+{% block title %}Impressum / Disclaimer{% endblock %}
+{% block content %}
+    <h2 class="center">Impressum</h2>
+
+    <!--<h3>Publisher</h3>-->
+    <small>
+        <pre>
+    Dr. Andrea Thorn
+    Universität Hamburg
+    HARBOR (Institute for Nanostruktur und Festkörperphysik)
+    Luruper Chaussee 149 / Bldg. 610 
+    22761 Hamburg 
+    Tel. +49 (0)40 42838-7442
+        </pre>
+    </small>
+
+    <p>Conception and design by Philipp Mostosi, Yunyun Gao and Andrea Thorn.</p>
+    <p>Refactored and maintained by Yunyun Gao.</p>
+    <p>
+        This website was developed using <em><a href="https://flask.pocoo.org/">Flask</a></em> and <em><a href="https://redis.io/">Redis</a></em>.
+        The fonts used are <em><a href="https://fonts.google.com/specimen/Source+Sans+Pro">Source Sans Pro</a></em> by Paul D. Hunt and
+        <em><a href="https://fonts.google.com/specimen/Source+Sans+Serif">Source Sans Serif</a></em> by Frank Grießhammer.
+        Both are licenced under the <em><a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web">Open Font License</a></em>.</p>
+
+    <h3>Liability for Content</h3>
+    <p class="flow">
+        All of the information on this website has been carefully reviewed.
+        We endeavour to ensure that all information is complete and factually correct.
+        Nevertheless, we cannot rule out the possibility of any errors appearing.
+        We therefore cannot guarantee the completeness, accuracy or current validity.
+    </p>
+
+    <h3>Liability for Web service</h3>
+    <p class="flow">
+        We provide the invoked software in good faith, but make no warranty, explicitly or implicitly, nor assume any
+        legal liability or responsibility for the purpose for which the data and software are used. We do not give any
+        warranty for this web service. The AUSPEX software is licensed under the terms of the GNU Lesser General Public
+        License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any
+        later version. For more information, see: <em><a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a></em>
+    </p>
+
+    <h3>Liability for Links</h3>
+    <p class="flow">
+        We do not take any responsibility for the content or the accessibility of third-party websites which are
+        accessible through this website via external links. Responsibility for this external content shall lie solely
+        with the content provider. We only provides access to the use of such content and will remove links to illegal
+        content upon notification.
+    </p>
+
+    <h3>Copyright</h3>
+    <p class="flow">
+        The content and other work on these websites are subject to German copyright.
+        With the exception of use in a scientific publication or for educational purposes,
+        the reproduction, adaptation, distribution or any kind of exploitation outside the limits of copyright require the written consent of the respective author.
+        <!--Downloads and copies of these pages are only permitted for private, non-commercial use.-->
+        The content of third parties is identified as such.
+        <!-- The content and other work on these websites are subject to German copyright.
+        The reproduction, adaptation, distribution or any kind of exploitation outside the limits of copyright require the written consent of the respective author.
+        Downloads and copies of these pages are only permitted for private, non-commercial use.
+        The content of third parties is identified as such.-->
+    </p>
+    <h3>Legal Notice of Data Usage</h3>
+    <p class="flow">
+        In order to provide the <em>AUSPEX</em> web service and prevent abuse or data theft, we collect connection data and use persistent cookies.
+    </p>
+    <p>
+        By agreeing to our terms of service you permit us to:
+    </p>
+    <ol>
+        <li>Set a <em>encrypted persistent cookie</em> to identify your session.</li>
+        <li>Save IP address, browser info and other meta-data to prevent abuse.</li>
+        <li>Validate and use <em><b>AUSPEX</b></em> on uploaded MTZ files as well as save job-associated data.</li>
+    </ol>
+
+    <p>
+        Your data will be treated confidential and <b>will not be shared</b> with third party websites or services unless required by law.
+    </p>
+    <p class="xb-margin">
+        Job associated data and MTZ files will be discarded after <b>one week</b>. Sessions expire after <b>30 days</b>.
+    </p>
+{% endblock %}

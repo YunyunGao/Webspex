@@ -1,0 +1,19 @@
+[Unit]
+Description=uWSGI Server
+After=network.target nginx.service
+
+[Service]
+#Type=forking
+User=auspex
+WorkingDirectory=/srv/www/webspex/
+ExecStart=/usr/sbin/uwsgi --ini /etc/uwsgi/webspex.ini
+#Restart=on-failure # or always, on-abort, etc
+
+Restart=always
+KillSignal=SIGQUIT
+Type=notify
+StandardError=syslog
+NotifyAccess=all
+
+[Install]
+WantedBy=multi-user.target

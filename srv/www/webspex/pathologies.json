@@ -1,0 +1,67 @@
+[
+  {
+    "title": "Ice Rings",
+    "subtitle": "",
+    "preview": "examples/preview/ice_rings.jpg",
+    "image": "examples/full/ice_rings.jpg",
+    "modal": "examples/ice_rings.html"
+  },
+  {
+    "title": "Beamstop",
+    "subtitle": "",
+    "preview": "examples/preview/beamstop.jpg",
+    "image": "examples/full/beamstop.jpg",
+    "modal": "examples/beamstop.html"
+  },
+  {
+    "title": "Manhattan Skyline",
+    "subtitle": "",
+    "preview": "examples/preview/manhattan.jpg",
+    "image": "examples/full/manhattan.png",
+    "modal": "examples/manhattan.html"
+  },
+  {
+    "title": "Missing Rings",
+    "subtitle": "",
+    "preview": "examples/preview/missing_rings.jpg",
+    "image": "examples/full/missing_rings.png",
+    "modal": "examples/missing_rings.html"
+  },
+
+  {
+    "title": "Missing Line",
+    "subtitle": "",
+    "preview": "examples/preview/missing_line.jpg",
+    "image": "examples/full/missing_line.png",
+    "modal": "examples/missing_line.html"
+  },
+  {
+    "title": "Multiplicity Ladder",
+    "subtitle": "",
+    "preview": "examples/preview/multiplicity.jpg",
+    "image": "examples/full/multiplicity.png",
+    "modal": "examples/multiplicity.html"
+  },
+  {
+    "title": "Separation of Distributions",
+    "subtitle": "",
+    "preview": "examples/preview/separation.jpg",
+    "image": "examples/full/separation.png",
+    "modal": "examples/separation.html"
+  },
+  {
+    "title": "Background Misestimation",
+    "subtitle": "",
+    "preview": "examples/preview/background.jpg",
+    "image": "examples/full/background.png",
+    "modal": "examples/background.html"
+  },
+  {
+    "title": "Terracing",
+    "subtitle": "",
+    "preview": "examples/preview/lines.jpg",
+    "image": "examples/full/lines.png",
+    "modal": "examples/lines.html"
+  }
+
+]

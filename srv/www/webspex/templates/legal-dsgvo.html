@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title %}Legal Notice{% endblock %}
+{% block content %}
+    <h2 class="center">Legal Notice of Data Usage</h2>
+    <p class="flow">
+        In order to provide the <em>AUSPEX</em> web service and prevent abuse or data theft, we collect connection data and use persistent cookies.
+    </p>
+    <p>
+        By agreeing to our terms of service you permit us to:
+    </p>
+    <ol>
+        <li>Set a <em>encrypted persistent cookie</em> to identify your session.</li>
+        <li>Save IP address, browser info and other meta-data to prevent abuse.</li>
+        <li>Validate and use <em><b>AUSPEX</b></em> on uploaded MTZ files as well as save job-associated data.</li>
+    </ol>
+
+    <p>
+        Your data will be treated confidential and <b>will not be shared</b> with third party websites or services unless required by law.
+    </p>
+    <p class="xb-margin">
+        Job associated data and MTZ files will be discarded after <b>one week</b>. Sessions expire after <b>30 days</b>.
+    </p>
+
+    <div class="vcenter">
+        <a href="{{ url_for('dsgvo') }}"><span class="click-here click-green">I agree</span></a>
+        <a href="/"><span class="click-here click-red">I decline</span></a>
+    </div>
+{% endblock %}

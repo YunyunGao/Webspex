@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% block title %}Results for #{{ id }}{% endblock %}
+{% block head %}
+    <script type=text/javascript src="{{ url_for('static', filename='modal.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('ajax_js', id=id)  }}"></script>
+{% endblock %}
+{% block content %}
+    <div style="min-height: 96px"><!-- FIXME -->
+        <span class="right xb-margin1 tooltip ">
+            <span class="uhead">{{ name|e }}</span>
+            <img class="right" src="{{ url_for('identicon', id=id) }}"/>
+            <div class="tri-down"></div>
+            <span class="tooltiptext">A unique hash-generated image to help you identify your files</span>
+        </span>
+        <h2>
+            <a id="jobstatus" href="{{ url_for('results', id=id) }}">Job status: loading...</a>
+        </h2>
+        Output log:
+    </div>
+    <div id="cout" class="mono"></div>
+    <div class="modal" onclick="closeModal(event)">
+        <div class="modal-content modal-80" id="m_amp">
+            <span class="close" onclick="closeModal(event)">&times;</span>
+            <h2>AMPLITUDES</h2>
+        </div>
+        <div class="modal-content modal-80" id="m_int">
+            <span class="close">&times;</span>
+            <h2>INTENSITIES</h2>
+        </div>
+    </div>
+    <img id="throbber" src="{{ url_for('static', filename='ajax-loader.gif') }}" />
+    <h2 id="result-head"></h2>
+    <div id="plots" class="plot"></div>
+
+    <form id="redoform" class="invisible" method="post" action="{{ url_for('auspex', redoJobID=id) }}" enctype="multipart/form-data">
+        <div class="embox darkbox">
+            <span class="smallhead">Rerun</span>
+            <div class="equidist">
+                <label for="ice" class="tooltip">
+                    Icefinder
+                    <input type="checkbox" name="ice" {{ 'checked' if ice == True else '' }}>
+                    <div class="tri-down"></div>
+                    <span class="tooltiptext">Flag suspected ice rings red</span>
+                </label>
+                <label for="ylim" class="tooltip">
+                    y-range:
+                    <select name="ylim">
+                        <option value="minmax"   {{ 'selected' if ylim == 'minmax'   else '' }}>All data</option>
+                        <option value="auto"     {{ 'selected' if ylim == 'auto'     else '' }}>Distribution core</option>
+                        <option value="auto_low" {{ 'selected' if ylim == 'auto_low' else '' }}>Lower core distribution</option>
+                        <option value="low"      {{ 'selected' if ylim == 'low'      else '' }}>Below mean</option>
+                    </select>
+                    <div class="tri-down"></div>
+                    <span class="tooltiptext">Select the range for intensities, amplitudes, etc.</span>
+                </label>
+                <label for="res" class="tooltip">
+                    resolution cut-off
+                    <input type="number" step="0.1" min="0" max="200" name="res" style="width: 8ch" value="{{ dmin|e }}" />
+                    <div class="tri-down"></div>
+                    <span class="tooltiptext">Select the resolution cut-off for plots<br/> (or leave empty)</span>
+                </label>
+                <label for="shd" class="tooltip">
+                    Shared
+                    <input type="checkbox" name="shd">
+                    <div class="tri-down"></div>
+                    <span class="tooltiptext ttt-xwide" checked="False">
+                        <b>Private</b> jobs can only be accessed from this session, whereas <b>shared</b> jobs can be accessed by others
+                    </span>
+                </label>
+                <button type="submit" name="actredo" value="true">Submit</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

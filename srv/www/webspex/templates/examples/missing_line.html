@@ -1,0 +1,21 @@
+<p class="flow">
+    A missing line between 5.6 and 6.0 <span class="math-serif">F<sub>obs</sub>/&sigma;(F<sub>obs</sub>)</span> is due to a bug in a lookup table in CTRUNCATE and TRUNCATE respectively.
+</p>
+
+<div class="figure">
+    <img src="{{ url_for('static', filename=exItem['image']) }}" />
+    <p class="caption">
+    A missing line in PDB 5AEW, integrated by HKL2000, and converted with TRUNCATE.
+    </p>
+</div>
+
+<p class="flow">
+    <span class="head">Problem:</span>
+    This diminishes your data quality slightly.
+</p>
+
+<p class="flow">
+    <span class="head">Advice:</span>
+    Use intensities where possible, use the newest versions of CTRUNCATE and TRUNCATE where the bug has been removed to convert your data from intensities to amplitudes. If you got this as the result of automatic processing (for example by CrystFEL, HKL2000 or at a synchrotron), please check you have the newest version and if the problem persists, contact the pipeline authors with a link to this site, so that they can upgrade TRUNCATE to the newest version in their pipeline.
+</p>
+

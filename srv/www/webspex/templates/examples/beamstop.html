@@ -1,0 +1,24 @@
+<p class="flow">
+Reflections with intensity or amplitude values near 0 at low resolution indicate that the beam stop was not masked or not masked out completely in integration.
+</p>
+
+<div class="figure">
+    <img src="{{ url_for('static', filename=exItem['image']) }}" />
+    <p class="caption">
+        PDB entry 5GTV: The incorrectly integrated reflection are clearly visible at approximately 30 &Aring; resolution (red square), indicating a missing mask for the beam stop.
+        <!--<b>Top:</b> PDB entry 5GTV: The incorrectly integrated reflection are clearly visible at approximately 30 &Aring; resolution, indicating a missing mask for the beam stop.
+        <b>Bottom:</b> In PDB entry 5AI2, only some reflections are 0, while others are higher, indicating an irregular beam stop and an insufficient mask in integration.-->
+    </p>
+</div>
+
+<p class="flow">
+    <span class="head">Problem:</span>
+    These bad low resolution reflections can impair phasing and refinement, in particular if the anomalous signal is to
+    be used.
+</p>
+
+<p class="flow">
+    <span class="head">Advice:</span>
+    Repeat data processing with a correct beam stop mask. If this is not possible, use a suitable low resolution cutoff.
+</p>
+

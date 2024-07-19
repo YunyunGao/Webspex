@@ -1,0 +1,78 @@
+<p>
+    Plots of <span class="math-serif">I<sub>obs</sub>/&sigma;(I<sub>obs</sub>)</span> (and plots of <span class="math-serif">F<sub>obs</sub>/&sigma;(F<sub>obs</sub>)</span> ) vs resolution often show clustering around certain values at low resolution. When considering the associated multiplicity values, it is evident that the higher the multiplicity, the larger is <span class="math-serif">I<sub>obs</sub>/&sigma;(I<sub>obs</sub>)</span>.
+    This is of course because when measurements are summed up, and given that these measurements are independent from each other, their variances are summed up as well.
+</p>
+<div class="paragraph flow">
+    If the intensity <span class="math-serif">I</span> has been measured <span class="math-serif">N</span> times, denoted by <span class="math-serif">i</span>, then
+    <div class="math-container">
+        <!--<div class="math-label">[1]</div>-->
+        <div class="math-formula math-symbol">
+            I =
+            <div class="math-fraction">
+                <div class="math-frac-elem math-numeric">1</div>
+                <div class="math-frac-elem">N</div>
+            </div>
+            <div class="math-sum">
+                <div class="math-sum-from">N</div>
+                <div class="math-sum-sigma">Σ</div>
+                <div class="math-sum-to">i</div>
+            </div>
+            I<sub>i</sub>
+
+            <span class="math-text">and</span>
+
+            &sigma;<span class="mn">(</span>I<span class="mn">)</span>=
+
+            <div class="math-fraction">
+                <div class="math-frac-elem math-numeric">1</div>
+                <div class="math-frac-elem">N</div>
+            </div>
+            <div class="math-double">[</div>
+            <div class="math-sum">
+                <div class="math-sum-from">N</div>
+                <div class="math-sum-sigma">Σ</div>
+                <div class="math-sum-to">i</div>
+            </div>
+            <!--<div class="math-onehalf">[</div>-->
+                &sigma;<span class="mn">(</span>I<sub>i</sub><span class="mn">)</span><sup class="math-numeric">2</sup>
+            <!--<div class="math-onehalf">]</div>-->
+            <div class="math-double">]<sup class="math-numeric">1/2</sup></div>
+        </div>
+    </div>
+
+
+    If all <span class="math-serif">&sigma;(I<sub>i</sub>)</span> are equal, then
+
+    <div class="math-container">
+        <div class="math-formula math-symbol">
+            &sigma;<span class="mn">(</span>I<span class="mn">)</span>=
+            <div class="math-fraction">
+                <div class="math-frac-elem">&sigma;<span class="mn">(</span>I<sub>i</sub><span class="mn">)</span></div>
+                <div class="math-frac-elem">N<sup class="math-numeric">1/2</sup></div>
+            </div>
+        </div>
+    </div>
+
+    Hence, the ‘steps’ represent the discrete values of multiplicity in the data, i.e. the number of times a reflection, or its symmetry equivalent, has been measured. Increasing the number of individual measurements contributing to an average results in lower <span class="math-serif">&sigma;(I<sub>obs</sub>)</span> and therefore increases <span class="math-serif">I<sub>obs</sub> /&sigma;(I<sub>obs</sub>)</span>. However, at high resolution, the accuracy of the data is usually limited by the crystal as well as the experimental setup [Diederichs, 2010], including the multiplicity, hence the effect becomes less pronounced.
+</div>
+
+<div class="figure">
+    <img src="{{ url_for('static', filename=exItem['image']) }}" />
+    <p class="caption">
+        Plot of I<sub>obs</sub>/&sigma;(I<sub>obs</sub>) vs resolution for PDB 4EPZ. <b>A.</b> At high resolution, ice rings are clearly visible, while at low resolution the values are clustered, forming a ‘ladder-like’ scatter plot. <b>B.</b> The same plot, coloured by multiplicity. The higher the multiplicity, the larger is I<sub>obs</sub>/&sigma;(I<sub>obs</sub>), hence accounting for the behaviour: The value of a measurement is less uncertain the more often it has been made. At low resolution, the main influence on these values is their multiplicity. In contrast, at high resolution weaker reflections are influenced by other factors.
+    </p>
+</div>
+
+<p class="flow">
+    <span class="head">Problem:</span>
+    None
+</p>
+
+<p class="flow">
+    <span class="head">Advice:</span>
+    Advice: No action is needed to address this.
+</p>
+
+<p class="reference">
+    Diederichs, K. (2010). <i>Acta Cryst. D</i><b>66</b>, 733–740.
+</p>

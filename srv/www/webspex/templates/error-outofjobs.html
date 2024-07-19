@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block title %}Error{% endblock %}
+{% block content %}
+    <div class="error">
+        <p class="head"><b>Error: Too many active jobs</b></p>
+        <p class="flow">You have reached the limit of <b>{{ limit }}</b> queued or running jobs per session.</p>
+        <p class="flow">You can monitor the progress of your currently submitted jobs by navigating to the jobs list section above.</p>
+        <p class="flow">Please wait a few minutes before trying again. If this problem persists, feel free to contact the administrators.</p>
+    </div>
+{% endblock %}

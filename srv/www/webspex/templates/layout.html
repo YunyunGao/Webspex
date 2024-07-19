@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block body %}
+        <div id="header">
+            <a href="/">
+                <img src="{{ url_for('static', filename='auspex_logo_800.png') }}" alt="AUSPEX" class="logo left" />
+            </a>
+            <a href="http://www3.physnet.uni-hamburg.de/physnet/">
+                <div class="logo right relative center-text">
+                    <p class="xb-margin1 no-margin">A service provided by</p>
+                    <img src="{{ url_for('static', filename='UHH_logo.gif') }}" alt="UHH" class="center" width="257" height="65" />
+                </div>
+            </a>
+        </div>
+        <div id="navbar" class="table">
+            <div class="row">
+                <a href="/" class="cell">Home</a>
+                <a href="{{ url_for('upform') }}"  class="cell">Analyze PDB/MTZ</a>
+                <a href="{{ url_for('joblist') }}" class="cell">View Jobs</a>
+                <a href="{{ url_for('pathol') }}"  class="cell">Examples</a>
+                <a href="{{ url_for('legal') }}"   class="cell">Disclaimer</a>
+            </div>
+        </div>
+        <div id="content">{% block content %}{% endblock %}</div>
+        <div id="footer-spacer"></div>
+        <a href="http://journals.iucr.org/d/issues/2017/09/00/hi5647/" id="footer">
+            <h2 class="citation cit-open vcenter">Please Cite</h2>
+            <!--<img class="cit-open" src="{{ url_for('static', filename='FigPen_96.png') }}" />-->
+
+            <!--<img class="cit-open" src="{{ url_for('static', filename='cite_open.png') }}" />
+            <img class="cit-close" src="{{ url_for('static', filename='cite_close.png') }}" />-->
+            <div class="citation vcenter">
+                Thorn, A., Parkhurst, J.M., Emsley, P., Nicholls, R., Evans, G., Vollmar, M. & Murshudov, G.N. (2017)<br />
+                <b>AUSPEX: a graphical tool for X-ray diffraction data analysis</b>, <i>Acta Cryst D</i><b>73</b>, 729-737.<br />
+                <span class="line-1p5"><em>This helps us to develop AUSPEX as a free service.</em></span>
+            </div>
+            <!--<p id="disclaimer"> Rudolf Virchow Center ⚫ University of Wuerzburg ⚫ Josef-Schneider-Str. 2, 97080 Wuerzburg ⚫ Germany</p>-->
+        </a>
+{% endblock %}
